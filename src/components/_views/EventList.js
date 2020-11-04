@@ -6,15 +6,12 @@ import { UserContext } from "../../context/userContext";
 import { LoggedInContext } from "../../context/loggedInContext";
 import { EventContext } from "../../context/eventContext";
 import EventFilters from "../_molecules/EventFilters";
-import {
-  handleChange,
-  sortFilterEvents,
-} from "../../assets/functions/functions";
 import { modalReducer } from "../../reducers/modalReducer";
 
 // *** components
 import EventEntry from "../_molecules/EventEntry";
 import Modal from "../_molecules/Modal";
+// import { eventFilterReducer } from "../../reducers/eventFilterReducer";
 
 // *** styled components
 const Wrapper = styled.div``;
@@ -33,25 +30,13 @@ const EventList = (props) => {
   const [loggedIn, setLoggedIn] = useContext(LoggedInContext);
   const [eventList, setEventList] = useContext(EventContext);
   /* eslint-enable */
-  const [filterSort, setFilterSort] = useState({
-    sort: "",
-    filter_assigned: "",
-    filter_author: "",
-  });
   const [deniedModal, dispatchDenied] = useReducer(modalReducer, false);
   const [removeModal, dispatchRemove] = useReducer(modalReducer, false);
   const [removeId, setRemoveId] = useState("");
 
   // ? handle all filter events on change
-  const filterChange = (e) => {
-    setFilterSort(handleChange(e, filterSort));
-    let sortedData = sortFilterEvents(filterSort, eventList);
-    console.log(sortedData);
-    // setEventList({
-    //   ...eventList,
-    //   sortedData,
-    // });
-  };
+  // TODO filter and sort functions
+  const filterChange = (e) => {};
 
   // ? confirm if user can perform this action
   const promptRemoveItem = (id) => {

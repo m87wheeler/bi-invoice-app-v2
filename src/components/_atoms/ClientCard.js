@@ -45,6 +45,7 @@ const Postcode = styled.p`
   grid-area: postcode;
   justify-self: flex-start;
   text-decoration: none;
+  text-transform: uppercase;
 `;
 
 const Type = styled.p`
