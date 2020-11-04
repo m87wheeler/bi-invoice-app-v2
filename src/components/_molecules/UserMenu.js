@@ -9,6 +9,10 @@ const Wrapper = styled.div`
   height: auto;
   padding: 0.25rem;
   background: #566573;
+  border-top: 1px solid #788795;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  z-index: 999;
 `;
 
 const List = styled.ul`

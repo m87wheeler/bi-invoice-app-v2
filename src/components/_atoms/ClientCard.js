@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   padding: 0.2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
   column-gap: 0.5rem;
   background: #566573;
   border-radius: 0.25rem;
@@ -26,7 +27,7 @@ const DetailsLink = styled(Link)`
   height: 100%;
   padding: 1rem;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr auto;
   grid-template-columns: 1fr auto;
   grid-template-areas:
     "title type"
@@ -51,7 +52,7 @@ const Postcode = styled.p`
 const Type = styled.p`
   grid-area: type;
   justify-self: flex-end;
-  align-self: center;
+  align-self: flex-start;
   padding: 0.25rem;
   font-size: 0.65rem;
   font-weight: 700;
@@ -63,6 +64,7 @@ const Type = styled.p`
 `;
 
 const Anchor = styled.a`
+  justify-self: flex-end;
   width: 100%;
   height: 2.5rem;
   line-height: 2.5rem;
