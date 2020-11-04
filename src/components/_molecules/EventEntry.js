@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 // *** components
 import Title from "../_atoms/Title";
+import PriorityTag from "../_atoms/PriorityTag";
 
 // *** styled components
 const Wrapper = styled.div`
@@ -11,28 +13,28 @@ const Wrapper = styled.div`
   overflow: hidden;
 `;
 
+const StyledLink = styled(Link)``;
+
 const SlideIn = styled.div`
   width: 100%;
   height: 100%;
   margin-left: ${(props) => (props.status ? "0" : "-90%")};
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  background: #566573;
-  color: #eee;
+  background: ${(props) => (props.complete ? "seagreen" : "#566573")};
   transition: margin 0.3s ease-in-out;
   cursor: pointer;
 
-  &:hover {
-    background: #667684;
-  }
-
-  p {
+  p,
+  ${StyledLink} {
     display: inline;
     padding: 1rem;
     font-size: 0.9rem;
     font-weight: 700;
     justify-self: center;
     align-self: center;
+    color: #eee;
+    text-decoration: none;
 
     &:hover {
       color: #111;
@@ -77,21 +79,8 @@ const DateContainer = styled.div`
   }
 `;
 
-const Priority = styled.p`
+const Priority = styled(PriorityTag)`
   grid-column: 3 / span 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  text-align: center;
-  text-transform: capitalize;
-  background: ${(props) =>
-    props.level.toLowerCase() === "high"
-      ? "crimson"
-      : props.level.toLowerCase() === "regular"
-      ? "orange"
-      : "seagreen"};
-  color: #fff;
 `;
 
 const Time = styled.p`
@@ -145,9 +134,15 @@ const EventEntry = (props) => {
 
   return (
     <Wrapper>
-      <SlideIn status={slideMenu} onClick={handleSlide}>
-        <p>REMOVE</p>
-        <p>VIEW</p>
+      <SlideIn status={slideMenu} complete={complete} onClick={handleSlide}>
+        <p
+          onClick={() => {
+            props.onRemove(id);
+          }}
+        >
+          REMOVE
+        </p>
+        <StyledLink to={`events/${id}`}>VIEW</StyledLink>
         <p>CLOSE</p>
       </SlideIn>
       <MainContent status={slideMenu}>
@@ -163,9 +158,7 @@ const EventEntry = (props) => {
           {all_day ? "All Day" : `${fStHr}:${fStMn}-${fEnHr}:${fEnMn}`}
         </Time>
         <Category>{fCat}</Category>
-        <Priority level={priority}>
-          <span>{priority}</span>
-        </Priority>
+        <Priority level={priority} />
       </MainContent>
     </Wrapper>
   );

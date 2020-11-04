@@ -10,7 +10,6 @@ const H6 = styled.h6``;
 const Title = (props) => {
   const titleStyles = {
     lineHeight: "1.25",
-    letterSpacing: ".15em",
     fontWeight: "500",
     color: props.white ? "#eee" : "#111",
     textAlign: props.center ? "center" : "left",
@@ -19,19 +18,47 @@ const Title = (props) => {
 
   switch (props.h) {
     case 1:
-      return <H1 style={titleStyles}>{props.children}</H1>;
+      return (
+        <H1 className={props.className} style={titleStyles}>
+          {props.children}
+        </H1>
+      );
     case 2:
-      return <H2 style={titleStyles}>{props.children}</H2>;
+      return (
+        <H2 className={props.className} style={titleStyles}>
+          {props.children}
+        </H2>
+      );
     case 3:
-      return <H3 style={titleStyles}>{props.children}</H3>;
+      return (
+        <H3 className={props.className} style={titleStyles}>
+          {props.children}
+        </H3>
+      );
     case 4:
-      return <H4 style={titleStyles}>{props.children}</H4>;
+      return (
+        <H4 className={props.className} style={titleStyles}>
+          {props.children}
+        </H4>
+      );
     case 5:
-      return <H5 style={titleStyles}>{props.children}</H5>;
+      return (
+        <H5 className={props.className} style={titleStyles}>
+          {props.children}
+        </H5>
+      );
     case 6:
-      return <H6 style={titleStyles}>{props.children}</H6>;
+      return (
+        <H6 className={props.className} style={titleStyles}>
+          {props.children}
+        </H6>
+      );
     default:
-      return <H1 style={titleStyles}>{props.children}</H1>;
+      return (
+        <H1 className={props.className} style={titleStyles}>
+          {props.children}
+        </H1>
+      );
   }
 };
 

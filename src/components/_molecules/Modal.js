@@ -56,29 +56,47 @@ const Text = styled.p`
   font-weight: 500;
 `;
 
+const ConfirmButton = styled(Button)`
+  ${(props) =>
+    props.singleOption &&
+    css`
+      grid-column: 1 / 3;
+    `}
+`;
+
 const Modal = (props) => {
   return (
     <Container reveal={props.reveal}>
       <Wrapper reveal={props.reveal}>
         <Text>{props.text}</Text>
         {props.confirmLink ? (
-          <Button link={props.confirmLink} confirm>
+          <ConfirmButton
+            link={props.confirmLink}
+            singleOption={props.singleOption}
+            confirm={!props.singleOption}
+          >
             {props.confirm || "Confirm"}
-          </Button>
+          </ConfirmButton>
         ) : (
-          <Button confirm onClick={props.onConfirm}>
+          <ConfirmButton
+            onClick={props.onConfirm}
+            singleOption={props.singleOption}
+            confirm={!props.singleOption}
+          >
             {props.confirm || "Confirm"}
-          </Button>
+          </ConfirmButton>
         )}
-        {props.declineLink ? (
-          <Button link={props.declineLink} danger>
-            {props.decline || "Decline"}
-          </Button>
-        ) : (
-          <Button danger onClick={props.onDecline}>
-            {props.decline || "Decline"}
-          </Button>
-        )}
+        {!props.singleOption ? (
+          props.declineLink ? (
+            <Button link={props.declineLink} danger>
+              {props.decline || "Decline"}
+            </Button>
+          ) : (
+            <Button onClick={props.onDecline} danger>
+              {props.decline || "Decline"}
+            </Button>
+          )
+        ) : null}
       </Wrapper>
     </Container>
   );

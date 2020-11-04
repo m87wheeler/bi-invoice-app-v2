@@ -35,9 +35,8 @@ const RadioOptions = (props) => {
         <p>{props.label}</p>
         {props.values &&
           props.values.map((value, i) => (
-            <span>
+            <span key={`${value}_${i}`}>
               <Input
-                key={`${value}_${i}`}
                 type="radio"
                 name={props.name}
                 value={value}

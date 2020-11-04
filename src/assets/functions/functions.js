@@ -194,3 +194,20 @@ export const generateDefaultDate = (type) => {
       throw new Error();
   }
 };
+
+// *****************************************************
+// *** convert UTC string to date and time strings
+// *****************************************************
+export const utcDateToDateString = (date) => {
+  let str = date.toUTCString();
+  let dy = str.substr(0, 3);
+  let dt = str.substr(5, 2);
+  let mn = str.substr(8, 3);
+  let yr = str.substr(12, 4);
+  return `${dy} ${dt} ${mn} ${yr}`;
+};
+export const utcDateToTimeString = (date) => {
+  let str = date.toUTCString();
+  let time = str.substr(17, 5);
+  return time;
+};

@@ -21,9 +21,47 @@ export const EventProvider = ({ children }) => {
         author: "",
         date: new Date(),
       },
+      assigned_to: "1d737f98-5ce0-489e-9ff9-7cf0095abfe5",
+      complete: false,
+      client: "2656h3-bdbd83-7s33bd",
+    },
+    {
+      id: uuidv4(),
+      title: "Home Visit @ Maldon",
+      date: {
+        all_day: false,
+        start: "2020-12-21T09:30:00.000Z",
+        end: "2020-12-21T10:45:00.000Z",
+      },
+      description: "Meet with client",
+      category: "home_visit",
+      priority: "low",
+      creation: {
+        author: "",
+        date: new Date(),
+      },
       assigned_to: "none",
       complete: false,
-      client: "none",
+      client: "2656h3-bdbd83-7s33bd",
+    },
+    {
+      id: uuidv4(),
+      title: "Contact client regarding payment",
+      date: {
+        all_day: true,
+        start: "2020-06-17T09:30:00.000Z",
+        end: "2020-06-17T10:45:00.000Z",
+      },
+      description: "",
+      category: "contact",
+      priority: "high",
+      creation: {
+        author: "",
+        date: new Date(),
+      },
+      assigned_to: "1d737f98-5ce0-489e-9ff9-7cf0095abfe5",
+      complete: false,
+      client: "2656h3-bdbd83-7s33bd",
     },
   ]);
 
