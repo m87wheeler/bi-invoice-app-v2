@@ -4,6 +4,7 @@ import { ClientContext } from "../context/clientContext";
 // import ClientCardList from "../components/_organisms/ClientCardList";
 
 const ClientList = () => {
+  //eslint-disable-next-line
   const [clientList, setClientList] = useContext(ClientContext);
 
   return <h1>Clients</h1>;

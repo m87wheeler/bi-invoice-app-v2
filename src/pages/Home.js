@@ -14,6 +14,7 @@ const Wrapper = styled.div`
 `;
 
 const Home = () => {
+  // eslint-disable-next-line
   const [loggedIn, setLoggedIn] = useContext(LoggedInContext);
 
   if (loggedIn.logged_in) {

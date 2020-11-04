@@ -113,6 +113,7 @@ const EventEntry = (props) => {
   const [slideMenu, setSlideMenu] = useState(false);
 
   // ? destructuring props data
+  /* eslint-disable*/
   const {
     assigned_to,
     category,
@@ -127,6 +128,7 @@ const EventEntry = (props) => {
   } = props.data;
   const { author, date: creationDate } = creation;
   const { all_day, end, start } = date;
+  /*eslint-enable*/
 
   // ? format date strings as date object
   let fStartDate = new Date(start).toString();
