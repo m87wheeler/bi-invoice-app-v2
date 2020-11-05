@@ -10,7 +10,6 @@ import {
 // *** styled components
 const DateTime = styled.div`
   padding: 1rem;
-  padding-bottom: 2rem;
   display: grid;
   grid-template-rows: auto auto;
   justify-content: center;

@@ -56,9 +56,7 @@ const Header = () => {
 
   return (
     <Wrapper ref={wrapperRef}>
-      <Title h={2} white>
-        Blue Interiors
-      </Title>
+      <Title h={2} white></Title>
       {loggedIn.logged_in && (
         <UserAvatar user={loggedIn} onClick={handleUserMenu} />
       )}
