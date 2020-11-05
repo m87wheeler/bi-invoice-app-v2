@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 // *** data & hooks
 import { LoggedInContext } from "../../context/loggedInContext";
@@ -15,9 +15,22 @@ const StyledCard = styled(MessageCard)`
   background: ${(props) => (props.align ? "#ddd" : "#bbb")};
 `;
 
+const shake = keyframes`
+    0% { margin-left: 0; }
+    20% { margin-left: .5rem; }
+    40% { margin-left: -.5rem }
+    60% { margin-left: .5rem }
+    80% { margin-left: -.5rem }
+    100% { margin-left: 0 }
+`;
+
 const StyledDatestamp = styled(MessageDatestamp)`
   align-self: center;
   margin: 1rem 0 0.5rem;
+  animation-name: ${shake};
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 `;
 
 const Wrapper = styled.div`

@@ -7,6 +7,50 @@ export const MessagingProvider = ({ children }) => {
   const [messageThread, setMessageThread] = useState([
     {
       id: uuidv4(),
+      date: "Sun Nov 01 2020 11:00:45 GMT+0000 (Greenwich Mean Time)",
+      thread: [
+        {
+          id: uuidv4(),
+          user: "6a74f217-a94d-4ad6-a23b-9a67dabb3cd9",
+          name: "Martin Wheeler",
+          date: "Sun Nov 01 2020 11:00:45 GMT+0000 (Greenwich Mean Time)",
+          message:
+            "Eiusmod excepteur in sint deserunt nisi elit aute pariatur aliqua do consectetur velit officia. Anim ut in incididunt ut deserunt.",
+        },
+        {
+          id: uuidv4(),
+          user: "74hndh37-s9h2-872j-0dv0-8jdh633hs9i8",
+          name: "Bob Mortimer",
+          date: "Sun Nov 01 2020 12:57:45 GMT+0000 (Greenwich Mean Time)",
+          message:
+            "Et sunt esse ad ad adipisicing ullamco adipisicing occaecat. Veniam irure quis consectetur tempor voluptate elit tempor.",
+        },
+      ],
+    },
+    {
+      id: uuidv4(),
+      date: "Mon Nov 02 2020 11:00:45 GMT+0000 (Greenwich Mean Time)",
+      thread: [
+        {
+          id: uuidv4(),
+          user: "6a74f217-a94d-4ad6-a23b-9a67dabb3cd9",
+          name: "Martin Wheeler",
+          date: "Mon Nov 02 2020 11:00:45 GMT+0000 (Greenwich Mean Time)",
+          message:
+            "Eiusmod excepteur in sint deserunt nisi elit aute pariatur aliqua do consectetur velit officia. Anim ut in incididunt ut deserunt.",
+        },
+        {
+          id: uuidv4(),
+          user: "74hndh37-s9h2-872j-0dv0-8jdh633hs9i8",
+          name: "Bob Mortimer",
+          date: "Mon Nov 02 2020 12:57:45 GMT+0000 (Greenwich Mean Time)",
+          message:
+            "Et sunt esse ad ad adipisicing ullamco adipisicing occaecat. Veniam irure quis consectetur tempor voluptate elit tempor.",
+        },
+      ],
+    },
+    {
+      id: uuidv4(),
       date: "Tue Nov 03 2020 07:02:53 GMT+0000 (Greenwich Mean Time)",
       thread: [
         {
