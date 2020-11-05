@@ -37,7 +37,7 @@ const Footer = () => {
         <>
           <Button link="/">Home</Button>
           <Button link="/clients">Clients</Button>
-          <Button link="/events">Messaging</Button>
+          <Button link="/messaging">Messaging</Button>
         </>
       ) : (
         <p>&copy; 2020</p>

@@ -3,6 +3,7 @@ import { LoggedInProvider } from "./context/loggedInContext";
 import { UserProvider } from "./context/userContext";
 import { ClientProvider } from "./context/clientContext";
 import { EventProvider } from "./context/eventContext";
+import { MessagingProvider } from "./context/messagingContext";
 
 // *** pages ***
 import Home from "./pages/Home";
@@ -13,6 +14,7 @@ import ClientWorks from "./pages/ClientWorks";
 // import Events from "./pages/Events";
 import NewEvent from "./pages/NewEvent";
 import EventDetails from "./pages/EventDetails";
+import Messaging from "./pages/Messaging";
 
 // *** components ***
 import Layout from "./components/__ui/Layout";
@@ -34,6 +36,9 @@ const App = () => {
                   {/* <Route path="/events" exact component={Events} /> */}
                   <Route path="/events/new" component={NewEvent} />
                   <Route path="/events/:id" component={EventDetails} />
+                  <MessagingProvider>
+                    <Route path="/messaging" component={Messaging} />
+                  </MessagingProvider>
                 </Switch>
               </Layout>
             </Router>

@@ -33,7 +33,11 @@ const Wrapper = styled.button`
 
 const Button = (props) => {
   return props.link ? (
-    <LinkWrapper to={props.link} className={props.className}>
+    <LinkWrapper
+      to={props.link}
+      className={props.className}
+      style={props.style}
+    >
       <Wrapper
         confirm={props.confirm}
         danger={props.danger}
@@ -50,6 +54,7 @@ const Button = (props) => {
       danger={props.danger}
       onClick={props.onClick}
       disabled={props.disabled}
+      style={props.style}
     >
       {props.children}
     </Wrapper>

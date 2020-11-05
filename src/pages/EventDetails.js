@@ -98,7 +98,10 @@ const EventDetails = ({ match }) => {
         <p>Loading...</p>
       ) : (
         <>
-          <PriorityTag level={event.priority} />
+          <PriorityTag
+            level={event.priority}
+            style={{ padding: ".5rem 0", marginBottom: ".5rem" }}
+          />
           <Title>{event.title}</Title>
           <Section>
             <SectionTitle>Date:</SectionTitle>
@@ -132,7 +135,11 @@ const EventDetails = ({ match }) => {
             <SectionTitle>Assigned To</SectionTitle>
             <SectionText>{assignment.assigned_to}</SectionText>
           </Section>
-          <Button confirm={event.complete} onClick={toggleComplete}>
+          <Button
+            confirm={event.complete}
+            onClick={toggleComplete}
+            style={{ margin: "1rem 0" }}
+          >
             {event.complete ? "Mark As Incomplete" : "Mark As Complete"}
           </Button>
         </>

@@ -44,6 +44,25 @@ export const UserProvider = ({ children }) => {
         edit_event: true,
       },
     },
+    {
+      personal_data: {
+        name: "Bob Mortimer",
+        phone: "07712345999",
+        email: "user3@username.com",
+      },
+      client_list: [],
+      works_data: [],
+      user_data: {
+        id: "74hndh37-s9h2-872j-0dv0-8jdh633hs9i8",
+        username: "bobm",
+        password: "password",
+      },
+      privileges: {
+        edit_user: false,
+        edit_client: false,
+        edit_event: false,
+      },
+    },
   ]);
 
   return (

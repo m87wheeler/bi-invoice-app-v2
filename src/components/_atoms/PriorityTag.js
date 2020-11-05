@@ -17,7 +17,11 @@ const Wrapper = styled.div`
 `;
 
 const PriorityTags = (props) => {
-  return <Wrapper level={props.level}>{props.level}</Wrapper>;
+  return (
+    <Wrapper level={props.level} style={props.style}>
+      {props.level}
+    </Wrapper>
+  );
 };
 
 export default PriorityTags;

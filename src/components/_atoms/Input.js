@@ -40,10 +40,12 @@ const TextArea = styled.textarea`
 
 const Input = (props) => {
   return (
-    <Wrapper HtmlFor={props.name}>
-      <p>
-        {props.label} {props.required && <Required>*</Required>}
-      </p>
+    <Wrapper HtmlFor={props.name} className={props.className}>
+      {props.label && (
+        <p>
+          {props.label} {props.required && <Required>*</Required>}
+        </p>
+      )}
       {props.type === "textarea" ? (
         <TextArea
           disabled={props.disabled}

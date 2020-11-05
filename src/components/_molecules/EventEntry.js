@@ -18,6 +18,7 @@ const StyledLink = styled(Link)``;
 const SlideIn = styled.div`
   width: 100%;
   height: 100%;
+  padding: 0 0.5rem;
   margin-left: ${(props) => (props.status ? "0" : "-90%")};
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
